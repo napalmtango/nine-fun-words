@@ -1,0 +1,34 @@
+
+
+body {
+  background-color: $sec;
+  color: $pri-dark;
+}
+h1 {
+  color: $sec;
+  background-color: $pri;
+}
+.answers {
+  background-color: $trans-white;
+  border: 2px dotted $pri;
+  border-radius: 10px;
+}
+
+#questions {
+  font-size: 1rem;
+}
+
+#feedback {
+  padding: .3em;
+  border-radius: 0  0 10px 10px;
+}
+
+.correct {
+  color: $sec;
+  background-color: $feedbk-cor;
+}
+
+.incorrect {
+  color: $sec;
+  background-color: $feedbk-incor;
+}
