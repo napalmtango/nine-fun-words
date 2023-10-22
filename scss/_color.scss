@@ -1,13 +1,13 @@
-
-
 body {
   background-color: $sec;
   color: $pri-dark;
 }
+
 h1 {
   color: $sec;
   background-color: $pri;
 }
+
 .answers {
   background-color: $trans-white;
   border: 2px dotted $pri;
@@ -31,4 +31,8 @@ h1 {
 .incorrect {
   color: $sec;
   background-color: $feedbk-incor;
+}
+
+.the-right-one {
+  background-color: $trans-green;
 }
