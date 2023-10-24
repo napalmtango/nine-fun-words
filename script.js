@@ -95,7 +95,7 @@ function result() {
       feedback = $('#feedback');
       console.log(feedback);
       $('#feedback').addClass( "incorrect" );
-      $( `#ans`+ questions[q][0][1] ).toggleClass("the-right-one");
+      $( `#ans${questions[q][0][1]}` ).toggleClass("the-right-one");
       $('.result').html("<span class=\'rem1-35\'>&#128530; </span> I'm sorry, that answer is incorrect");
       $('.next').html("next>>");
     } 
@@ -140,7 +140,7 @@ function populate() {
   $('#questions').html(questions[q][0][0]);
   for (let i = 0; i < 4; i++) {
     let ii = i+1
-    $(`#ans`+i).html(questions[q][ii][0]);
+    $(`#ans${i}`).html(questions[q][ii][0]);
   }
 }
 
