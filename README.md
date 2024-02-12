@@ -1,4 +1,4 @@
-# project-12
+# Nine Fun Words
 Quiz app.
 
 A simple, minimally designed exercise utilizing jQuery and vanilla JavaScript.
