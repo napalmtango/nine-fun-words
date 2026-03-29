@@ -18,8 +18,16 @@ h1 {
   font-size: 1rem;
 }
 
-#feedback {
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 41px;
   padding: .3em;
+  background-color: $pri;
+  color: $sec;
+  border: 1px solid $pri;
+  border-top: none;
   border-radius: 0  0 10px 10px;
 }
 
@@ -35,4 +43,6 @@ h1 {
 
 .the-right-one {
   background-color: $trans-green;
+  border: 1px solid white;
+  box-shadow: 0 0 12px 4px white;
 }

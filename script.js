@@ -1,16 +1,17 @@
 $(function () {
-  $('h1').html('9 Sort of Fun Words');
+  $('h1').text('9 Fun Words');
 });
 
 //Global variables
 let q = 0;
 let chosen = 0; //reset with each new question
 let feedback = ''; //reset with each new question
+let correct = 0; // counter for correct answers
 
 const questions = [
   //index 0
   [
-    ["1. What does the word 'flummox' mean?", 2],
+    ["1. What does the word ‘flummox’ mean?", 2],
     ['A style of architecture characterized by ornate decorations', false],
     ['A famous British detective from a series of novels', false],
     ['To confuse or perplex greatly', true],
@@ -38,7 +39,7 @@ const questions = [
   //index 3
   [
     ['4. What does the word ‘snollygoster’ mean?', 1],
-    ['an expression of surprise', false],
+    ['An expression of surprise', false],
     ['A shrewd, unprincipled person, especially a politician', true],
     ['A colloquial term for an antlion larva', false],
     ['A type of creature that lives in the snow', false],
@@ -106,13 +107,14 @@ function result() {
   console.log(`q = ` + q);
   if (questions[q][chosen + 1][1]) {
     console.log('Answer is correct');
+    correct ++;
     feedback = $('#feedback');
     console.log(feedback);
     $('#feedback').addClass('correct');
     $('.result').html(
       "<span class='rem1-35'>&#127881; </span> Yes, that's the correct answer!"
     );
-    $('.next').html('next>>');
+    $('.next').text('next>>');
   } else {
     console.log('Answer is incorrect');
     feedback = $('#feedback');
@@ -122,9 +124,10 @@ function result() {
     $('.result').html(
       "<span class='rem1-35'>&#128530; </span> I'm sorry, that answer is incorrect"
     );
-    $('.next').html('next>>');
+    $('.next').text('next>>');
   }
   removeListeners();
+  console.log(`${correct} correct out of ${q+1}`);
 }
 
 function reset() {
@@ -132,8 +135,8 @@ function reset() {
   $('#feedback').removeClass('correct');
   $('#feedback').removeClass('incorrect');
   $(`#ans` + questions[q][0][1]).removeClass('the-right-one');
-  $('.result').html('');
-  $('.next').html('');
+  $('.result').text('');
+  $('.next').text('');
   setListeners();
   q++;
   populate();
@@ -161,10 +164,10 @@ $(`.next`).click(function () {
 
 //HTML manipulation
 function populate() {
-  $('#questions').html(questions[q][0][0]);
+  $('#questions').text(questions[q][0][0]);
   for (let i = 0; i < 4; i++) {
     let ii = i + 1;
-    $(`#ans${i}`).html(questions[q][ii][0]);
+    $(`#ans${i}`).text(questions[q][ii][0]);
   }
 }
 
